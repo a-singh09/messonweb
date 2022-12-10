@@ -8,7 +8,6 @@ var express = require("express"),
    User = require("./models/user.js");
 
    const path = require('path');
-   
 
 mongoose.connect("mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.6.0");
 
@@ -32,7 +31,7 @@ app.use('/secret',
     );
 
 // app.use('/secret', express.static(path.join('./views', 'public')))
-app.use('/secret', express.static('public'));
+app.use('/secret', express.static('views'));
 
 app.use(passport.initialize());
 app.use(passport.session());
